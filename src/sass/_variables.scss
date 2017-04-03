@@ -1,0 +1,92 @@
+/*
+  VARIABLES SCSS
+  ------------------------------
+*/
+
+// base-settings
+$base-font-size: 62.5%;
+$primary-color: #00bfff;
+$body-font-family: 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+
+
+
+// font-color
+// - - - - - - - - - - - - - - -
+
+//キーカラー
+$color-base: $primary-color;
+
+//検索背景色
+$color-blue1:#0099CC;
+
+// gray - - - - - - - - - - - - - - -
+//フォントカラー
+$color-gray1:#AAAAAA;
+
+//非活性インプットフォーム背景色
+$color-gray2:#BBBBBB;
+
+//ボーダーカラー
+$color-gray3:#CCCCCC;
+
+//背景色
+$color-gray4:#EEEEEE;
+
+
+// pink - - - - - - - - - - - - - - -
+//フォントカラー、ボタン背景色
+$color-pink1:#FF7D7D;
+
+// yellow - - - - - - - - - - - - - - -
+//プロジェクト一覧☆色
+$color-yellow1:#FFD919;
+
+//手配タスク手配選択時の背景色、フォントカラー、ボタン背景色、
+$color-yellow2:#FFBB22;
+
+//ボタン背景色
+$color-yellow3:#FFFFED;
+
+
+//text-shadow
+$text-shadow1: 1px 1px 2px #000;
+
+
+
+// font-size
+// - - - - - - - - - - - - - - -
+$font-sizeL1: 2.4rem;
+$font-size0: 2.2rem;
+$font-size1: 2rem;
+$font-size2:1.8rem;
+$font-size3:1.6rem;
+$font-size4:1.4rem;
+$font-size5:1.2rem;
+$font-size6:1rem;
+$font-size7:.8rem;
+
+// border-radius
+// - - - - - - - - - - - - - - -
+$radius-base: 5px;
+
+// margin
+// - - - - - - - - - - - - - - -
+.mb10{
+  margin-bottom: 10px !important;
+}
+
+.mb20{
+  margin-bottom: 20px !important;
+}
+
+.mgtb50{
+  margin: 50px 0 !important;
+}
+
+// padding
+// - - - - - - - - - - - - - - -
+.pdlr10{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+

@@ -1,0 +1,77 @@
+/*
+  RESET SCSS
+  ------------------------------
+*/
+
+div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header,
+hgroup, menu, nav, section,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1.6rem;
+  color: #000;
+}
+html,body{
+  min-width: 320px;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+ul li ul, ul li ol, ol li ul, ol li ol {
+    margin-left: 0;
+    margin-bottom: 0;
+}
+dl dt,
+dl dd {
+  margin-bottom: 0;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+input,
+select {
+  vertical-align: middle;
+}
+hr {
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='color'],
+textarea {
+  height: auto;
+  margin: 0;
+}

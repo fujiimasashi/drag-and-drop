@@ -1,0 +1,685 @@
+/*
+  LOGIN_PC SCSS
+  ------------------------------
+*/
+//loginFormSet
+.loginFormSet {
+  min-width: 1024px;
+  background: #f0f0f0;
+  &.login-top{
+    background: #fff;
+    .logo{
+      margin-top: 20px;
+    }
+    .login-area,
+    .signup-area {
+      background: #f4f4f4;
+      padding: 20px;
+      margin: 0 10px;
+      border-radius: $radius-base;
+    }
+    .signup-area{
+      margin-top: 10px;
+      .button{
+        margin: 0;
+      }
+    }
+    .loginForm-save-mailadress{
+      padding:5px;
+      margin-bottom: 20px;
+      display: table;
+      width: 100%;
+      .checkbox{
+        display: table-cell;
+        width: 10%;
+        vertical-align: middle;
+        text-align: center;
+        input{
+          margin-bottom: 0;
+        }
+      }
+     .text{
+        display: table-cell;
+        line-height: 1.2;
+        width: 90%;
+        vertical-align: middle;
+        label{
+          text-decoration: none;
+          color: #000;
+          font-size: $font-size4;
+          margin: 0;
+          font-weight: normal ;
+        }
+      }
+    }
+    .loginForm-password-forget{
+      text-align: center;
+      font-size: $font-size4;
+      margin-top: 15px;
+    }
+  }
+  // ログインナビ
+  header {
+    background: #fff;
+    .login-nav {
+      height: 70px;
+      padding: 10px 60px 10px 20px;
+      border-bottom: 1px solid $color-gray1;
+      &::after {
+        display: block;
+        clear: both;
+        content: '';
+      }
+      .synco-logo {
+        float: left;
+        width: 120px;
+        height: 34px;
+        margin-top: 5px;
+      }
+      .right {
+        float: right;
+        margin-left: -120px;
+        .inner {
+          margin-left: 120px;
+          position: relative;
+          .error-server-message{
+            top: 1px;
+          }
+        }
+        .loginForm-userName,
+        .loginForm-password {
+          display: inline-block;
+          vertical-align: top;
+          label {
+            display: inline-block;
+            margin: 8px 0 0 0 ;
+            font-size: $font-size5;
+            vertical-align: top;
+          }
+          > div {
+            display: inline-block;
+            margin: 0 5px 0 0 ;
+            position: relative;
+            input {
+              width: 140px;
+              height: 28px;
+              margin: 0;
+              font-size: $font-size5;
+            }
+            .error-message > span > span > span {
+              font-size: $font-size5;
+              top: 10px;
+            }
+          }
+        }
+        .loginForm-submit {
+          display: inline-block;
+          font-size: $font-size5;
+          vertical-align: top;
+          input.button {
+            margin: 0;
+            padding: .8rem;
+            font-size: $font-size5;
+          }
+        }
+        .loginForm-password-forget {
+          margin-top: 10px;
+          text-align: right;
+          a{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  // フッター
+  footer {
+    height: 72px;
+    padding-top: 15px;
+    text-align: center;
+    background: #fff;
+    small {
+      font-size: $font-size5;
+    }
+  }
+  //main
+  main {
+    &.main-view {
+      max-width: 1024px;
+      height: 587px;
+      margin: 0 auto;
+      position: relative ;
+      background: url(../../img/bg/bg_login.png) no-repeat;
+      background-position: center center;
+      &.center {
+        .signUpForm {
+          margin-left: -225px;
+          left: 50%;
+        }
+      }
+    }
+    .signUpForm{
+      .signUpForm-sex-col{
+        margin-bottom: 20px;
+        overflow: hidden;
+        .sex-men,
+        .sex-women,
+        .sex-other{
+          float: left;
+          width: 33.33%;
+          input{
+            margin: 0;
+          }
+        }
+      }
+      .signUpForm-userTerm{
+        padding:5px;
+        margin-bottom: 20px;
+        display: table;
+        width: 100%;
+        .checkbox{
+          display: table-cell;
+          width: 10%;
+          vertical-align: middle;
+          text-align: center;
+          input{
+            margin-bottom: 0;
+          }
+        }
+       .tos{
+          display: table-cell;
+          line-height: 1.2;
+          font-size: 1.6rem;
+          width: 90%;
+          vertical-align: middle;
+          text-decoration: underline;
+        }
+      }
+      .signUpForm-submit {
+        input:disabled{
+          background: #79B2FF;
+          opacity: 1;
+        }
+      }
+      h2.common-head {
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: $font-size3;
+        font-weight: bold;
+        line-height: 1;
+        color: #AAAAAA;
+      }
+      .attention {
+        color: #FF7D7D;
+        font-size: $font-size4;
+        font-weight: bold;
+      }
+      .button.gray{
+        background: #AAA;
+      }
+    }
+    .login-form,
+    .signUpForm,
+    .passwordForget,
+    .resetPass,
+    .resetPass-sns {
+      width: 430px;
+      margin: 35px auto;
+      padding: 35px 40px;
+      background: #fff;
+      border-radius:$radius-base;
+      .common-head {
+        margin-bottom: 15px;
+        font-size: $font-sizeL1;
+        font-weight: bold ;
+        text-align: center;
+        color: #000;
+      }
+      .headding01 {
+        margin-bottom: 20px;
+        font-size: 2.6rem;
+      }
+      p {
+        margin-bottom: 20px;
+        font-size: $font-size4;
+      }
+      .text-lead {
+        font-size: $font-size3;
+      }
+      .resetPass-domain {
+        font-size: $font-size2;
+        font-weight: bold ;
+      }
+      .confirm-head {
+        margin-bottom: 10px;
+        font-size: $font-size3;
+        font-weight: bold;
+        color: $color-gray1;
+      }
+      .list-note {
+        margin: -15px 0 20px;
+        font-size: 1.2rem;
+      }
+      .modal {
+        footer {
+          height: auto;
+          padding-top: 0;
+        }
+      }
+      .resetPass-method-email,
+      .resetPass-method-pin {
+        margin-bottom: 30px;
+        input {
+          width: 50px;
+          margin-top: 20px;
+          vertical-align: middle ;
+        }
+        .chk-text {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: normal ;
+          line-height: 1.2;
+          color: #000;
+        }
+        .chk-data {
+          font-size: $font-size4;
+          font-weight: normal ;
+          color: #000;
+        }
+      }
+      .resetPass-sns-confirm{
+        p{
+          font-weight: bold ;
+        }
+      }
+      .text {
+        a{
+          text-decoration: underline;
+        }
+      }
+    }
+    .login-form{
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  // .signUpForm .list-note {
+  //   margin: -15px 5px 10px;
+  //   color: #FFF;
+  // }
+  .resetPass{
+    .text-cenetr{
+      text-align: center ;
+    }
+  }
+
+  .common-catch-text{
+    font-size: 1.8rem;
+    color: #79B2FF;
+    font-weight: bold ;
+  }
+
+  .resetPass-head02{
+    font-weight: bold ;
+    text-decoration: underline;
+  }
+
+  // other
+  // - - - - - - - - - - - - - - -
+  // カラム用
+  .grid-top {
+    overflow: visible;
+    overflow-y: visible;
+    margin-left: -10px;
+    .grid-confirm {
+      padding-left: 10px;
+      .confirm-data {
+        text-align: left;
+      }
+    }
+    > .grid-block {
+      overflow: visible;
+      overflow-y: visible;
+      padding-left: 10px;
+    }
+  }
+  .confirm-data {
+    height: 32px;
+    margin-bottom: 20px;
+    padding: 6px 10px;
+    font-size: $font-size3;
+    font-size: $font-size5;
+    font-weight: normal;
+    line-height: 1.8rem;
+    text-align: left;
+    color: #000;
+    border: none;
+    border-radius: $radius-base;
+    background: $color-gray4;
+    &.text-center{
+      text-align: center ;
+    }
+  }
+  // 5. Button
+  // - - - - - - - - - - - - - - -
+  .button {
+    margin: 0 0 10px;
+    padding: 1rem 1rem;
+    font-size: 1.6rem;
+    -webkit-border-radius: $radius-base;
+            border-radius: $radius-base;
+    &.gray {
+      background: $color-gray1;
+    }
+  }
+  // 13. Forms
+  // - - - - - - - - - - - - - - -
+  // 主要inputの基本設定
+  input[type='checkbox'],
+  input[type='radio'],
+  input[type='text'],
+  input[type='password'],
+  input[type='date'],
+  input[type='datetime'],
+  input[type='datetime-local'],
+  input[type='month'],
+  input[type='week'],
+  input[type='email'],
+  input[type='number'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='time'],
+  input[type='url'],
+  input[type='color'],
+  textarea {
+    margin-bottom: 20px;
+    padding: .6rem 1rem;
+    font-size: $font-size3;
+    -webkit-border-radius: $radius-base;
+            border-radius: $radius-base;
+    box-shadow: 0 1px 3px 1px rgba(0,0,0,.2) inset;
+  }
+  input[type='checkbox'],
+  input[type='radio'] {
+    width: 1.8rem;
+    height: 1.8rem;
+    box-shadow: none;
+  }
+  label {
+    margin-bottom: 10px;
+    font-size: $font-size3;
+    font-weight: bold;
+    cursor: pointer ;
+    color: $color-gray1;
+  }
+  input[type='text'] + label {
+    padding: 10px 0 10px 10px;
+  }
+  input[type='datetime-local'] {
+    height: 35px;
+  }
+  select {
+    margin-bottom: 20px;
+  }
+  .required {
+    margin-left: 5px;
+    font-size: $font-size5;
+    color: $color-pink1;
+  }
+  .button-pulldown {
+    display: block;
+    position: relative;
+    &:before {
+      width: 14px;
+      height: 14px;
+      margin-top: -7px;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      content: '';
+      background: url(../../img/icon/next-icon-gray.svg) no-repeat;
+      background-size: contain;
+    }
+    input[type='text'],
+    select,
+    button,
+    a {
+      display: block;
+      height: 38px;
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: $font-size3;
+      text-align: left;
+      color: #000;
+      border: 1px solid $color-gray3;
+      border-radius: $radius-base;
+      background: #fff;
+      background: #fff;
+      background:    -moz-linear-gradient(top,  #fff 0%, #d3d3d3 100%);
+      background: -webkit-linear-gradient(top,  #fff 0%,#d3d3d3 100%);
+      background:         linear-gradient(to bottom,  #fff 0%,#d3d3d3 100%);
+
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d3d3d3',GradientType=0 );
+    }
+  }
+  .birthYear {
+    width: 40%;
+  }
+  .birthMonth,
+  .birthDay {
+    width: 30%;
+  }
+  //バリデーション表示
+  input.form-error.ng-touched,
+  input.form-error.ng-touched:hover,
+  input.form-error.ng-touched:focus,
+  input.ng-invalid.ng-touched,
+  input.ng-invalid.ng-touched:hover,
+  input.ng-invalid.ng-touched:focus,
+  textarea.ng-invalid.ng-touched,
+  textarea.ng-invalid.ng-touched,
+  textarea.ng-invalid.ng-touched:hover,
+  select.ng-invalid.ng-touched:focus,
+  select.ng-invalid.ng-touched:hover,
+  select.ng-invalid.ng-touched:focus{
+    border: 3px solid $color-pink1 !important;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0) inset !important;
+    padding: .3rem .8rem !important;
+  }
+  .ng-invalid.ng-touched,
+  .ng-invalid.ng-touched:hover,
+  .ng-invalid.ng-touched:focus {
+    border: 3px solid $color-pink1 !important;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0) inset !important;
+    border-radius:$radius-base !important;
+  }
+  form.ng-submitted {
+    input.form-error,
+    input.form-error:hover,
+    input.form-error:focus,
+    input.ng-invalid,
+    input.ng-invalid:hover,
+    input.ng-invalid:focus,
+    textarea.ng-invalid,
+    textarea.ng-invalid,
+    textarea.ng-invalid:hover,
+    select.ng-invalid:focus,
+    select.ng-invalid:hover,
+    select.ng-invalid:focus{
+      @extend input.ng-invalid.ng-touched
+    }
+    .ng-invalid,
+    .ng-invalid:hover,
+    .ng-invalid:focus {
+      @extend .ng-invalid.ng-touched
+    }
+  }
+  .error-messages {
+    position: relative ;
+    .text {
+      padding: 5px 10px;
+      font-size: $font-size4;
+      font-weight: bold;
+      line-height: 1.2;
+      position: absolute;
+      z-index: 10;
+      top: -8px;
+      left: 0;
+      color: #fff;
+      border-radius: $radius-base;
+      background: $color-pink1;
+      &:after {
+        width: 0;
+        height: 0;
+        margin-left: -10px;
+        position: absolute;
+        bottom: 100%;
+        left: 30px;
+        content: ' ';
+        pointer-events: none;
+        border: solid transparent;
+        border-width: 10px;
+        border-color: rgba(255, 125, 125, 0);
+        border-bottom-color: #ff7d7d;
+      }
+    }
+  }
+
+  .error-server-message{
+    padding: 5px 10px 5px 5px;
+    font-size: $font-size4;
+    font-weight: bold;
+    line-height: 1.2;
+    position: absolute;
+    z-index: 10;
+    top: 3px;
+    right: 102%;
+    color: #fff;
+    border-radius: $radius-base;
+    background: $color-pink1;
+    display: inline-block ;
+    white-space:nowrap;
+    margin: 0;
+    &:after {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(255, 125, 125, 0);
+      border-left-color: #ff7d7d;
+      border-width: 8px;
+      margin-top: -8px;
+    }
+    &.w-fixed{
+      width: 240px;
+      white-space: normal;
+      &:after {
+        top: 13px;
+      }
+    }
+  }
+  .base-position{
+    position: relative ;
+    .error-server-message{
+      top: 5px;
+      right: 105%;
+    }
+  }
+  .sns-code{
+    .error-server-message{
+      top: 21px;
+    }
+  }
+  .resetPass{
+    .error-server-message{
+      top: 13px;
+    }
+  }
+
+  //ユーザー名重複チェック
+  .check-id {
+    margin-top: -10px;
+    p{
+      font-size: $font-size5;
+      color: #000;
+      font-weight: bold ;
+      &.check-error{
+        color: #FF7D7D;
+      }
+    }
+    .suggest-id {
+      margin: -15px 0 25px;
+      padding: 10px;
+      background: #EEE;
+      border-radius: $radius-base;
+      p{
+        font-weight: normal ;
+        margin-bottom: 5px;
+      }
+      ul{
+        padding: 0 10px;
+        li{
+          font-size: $font-size5;
+          color: #79B2FF;
+          font-weight: bold ;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  //パスワード再設定手順選択画面エラー
+  .error-messages-method {
+    margin-bottom: 20px;
+    .text {
+      background: $color-pink1;
+      font-size: $font-size4;
+      margin-bottom: 10px;
+      color: #FFF;
+      font-weight: bold ;
+      padding: 5px 10px;
+      border-radius: $radius-base;
+    }
+  }
+
+  //ログイン系サーバーエラー
+  .alert.alert-danger {
+    ul {
+      margin-bottom: 20px;
+      li {
+        background: $color-pink1;
+        font-size: $font-size4;
+        margin-bottom: 10px;
+        color: #FFF;
+        font-weight: bold ;
+        padding: 5px 10px;
+        border-radius: $radius-base;
+      }
+    }
+  }
+
+}
+
+
+
+//ポリシー関連
+.policy_term {
+  padding-top: 20px;
+  .term {
+    overflow-y: auto;
+    height: 200px;
+    border: 1px solid $color-gray3;
+    border-radius:$radius-base;
+    background: $color-gray4;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  .text-small{
+    font-size: $font-size5;
+  }
+}
