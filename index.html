@@ -7,125 +7,121 @@
     <meta name="keywords" content=""/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <link rel="stylesheet" href="./dist/css/style.css">
-    <script src="./dist/js/index.js"></script>
+    
 
 </head>
 <body>
-    <h1>ドラッグアンドドロップ</h1>
+    <div class="grid-frame vertical task_wall_list">
 
-    <menu-frame class="task_wall_list">
-  <main>
-    <project-top-small project-id="self.projectId"></project-top-small>
-    <section class="task_wall_list-contents">
-      <div class="wall-wrapper">
-        <div class="wall-canvas">
-          <ul class="wall-list">
-            <li ng-repeat="(statusId, status) in self.statuses" ng-init="outerIndex = $index">
-              <section class="task-detail">
-                <header ng-style="{ background: status.color }">
-                  <h2 class="wall-title">{{status.name}}</h2>
-                </header>
-                <div class="task-list" data-statusId="{{statusId}}">
-                  <div class="task-list-item" ng-repeat="task in self.tasks[statusId]" ng-init="$last && self.handleRender(outerIndex)">
-                    <a ng-click="(self.taskId = task.id) && self.removeEvent()" zf-open="task-edit-modal" data-taskid="{{task.id}}">
-                      <div class="task-list-inner">
-                        <h3 class="task-title">
-                          <span class="task-main-title">{{task.name}}</span>
-                        </h3>
-                        <figure ng-init="files = (task|taskImageFile)">
-                          <div class="image" ng-if="[1, 2, 3].includes(task.task_type_id)">
-                            <img ng-src="{{files[0].file_path}}">
-                          </div>
-                          <ul class="task-image-list" ng-if="[4, 5].includes(task.task_type_id)">
-                            <li ng-repeat="file in files" ng-if="$index < 3">
-                              <img ng-src="{{file.file_path}}">
-                            </li>
-                          </ul>
-                        </figure>
-                        <task-label task="task" priorities="self.priorities"></task-label>
+      <div class="grid-block vertical" ng-transclude>
+        <main>
+          <section class="task_wall_list-contents">
+            <div class="wall-wrapper">
+              <div class="wall-canvas">
+                <ul class="wall-list">
+                  <li>
+                    <section class="task-detail">
+                      <header>
+                        <h2 class="wall-title">title1</h2>
+                      </header>
+                      <div class="task-list" data-statusId="01">
+                        <div class="task-list-item">
+                          <a>
+                            <div class="task-list-inner">
+                              <h3 class="task-title">
+                                <span class="task-main-title">list</span>
+                              </h3>
+                              <task-label task="task"></task-label>
+                            </div>
+                          </a>
+                        </div>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <footer>
-                  <a
-                    ng-if="self.isEditable"
-                    zf-open="task-wall-list-select-modal"
-                    ng-click="self.statusId = statusId"
-                    class="button"
-                    >
-                    タスクの追加
-                  </a>
-                </footer>
-              </section>
-            </li>
+                      <div class="task-list" data-statusId="02">
+                        <div class="task-list-item">
+                          <a>
+                            <div class="task-list-inner">
+                              <h3 class="task-title">
+                                <span class="task-main-title">list</span>
+                              </h3>
+                              <task-label task="task"></task-label>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="task-list" data-statusId="03">
+                        <div class="task-list-item">
+                          <a>
+                            <div class="task-list-inner">
+                              <h3 class="task-title">
+                                <span class="task-main-title">list</span>
+                              </h3>
+                              <task-label task="task"></task-label>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      
+                      <footer>
+                        <a class="button">タスクの追加</a>
+                      </footer>
+                    </section>
+                  </li>
 
-            <!-- カンバンの追加エリア フェーズ1で対応-->
-            <!--<li>
-              <section class="task-detail">
-                <div class="add-wall-button">
-                  <a zf-open="basicModal3" class="button expand"><img src="/img/icon/plus-icon-gray.svg">カンバンの追加</a>
-                </div>
-              </section>
-            </li> -->
-
-          </ul>
-        </div>
-      </div>
-    </section>
-    <div zf-modal id="task-wall-list-select-modal" class="device-sp">
-      <div class="task-type-modal grid-frame">
-        <div class="grid-block vertical">
-          <header class="primary title-bar">
-            <h1 class="center title headding-modal">タスクの種類選択</h1>
-          </header>
-
-          <div class="grid-content">
-            <div class="modal-contents block-list">
-              <ul class="list-arrow">
-                <li>
-                  <a ng-click="self.initTask(1)">
-                    <p class="title">汎用タスク</p>
-                    <p class="desc">一般的なタスク</p>
-                  </a>
-                </li>
-                <li>
-                  <a ng-click="self.initTask(2)">
-                    <p class="title">ミーティングタスク</p>
-                    <p class="desc">日時、場所、人が関わるタスク</p>
-                  </a>
-                </li>
-                <li>
-                  <a ng-click="self.initTask(3)">
-                    <p class="title">確認タスク</p>
-                    <p class="desc">デザイン等の確認タスク</p>
-                  </a>
-                </li>
-                <li>
-                  <a ng-click="self.initTask(4)">
-                    <p class="title">手配タスク</p>
-                    <p class="desc">ロケ地、キャスト、機材等の手配タスク</p>
-                  </a>
-                </li>
-                <li>
-                  <a ng-click="self.initTask(5)">
-                    <p class="title">アングルチェックタスク</p>
-                    <p class="desc">アングルの確認タスク</p>
-                  </a>
-                </li>
-              </ul>
+                  <li>
+                    <section class="task-detail">
+                      <header>
+                        <h2 class="wall-title">title1</h2>
+                      </header>
+                      <div class="task-list" data-statusId="04">
+                        <div class="task-list-item">
+                          <a>
+                            <div class="task-list-inner">
+                              <h3 class="task-title">
+                                <span class="task-main-title">list</span>
+                              </h3>
+                              <task-label task="task"></task-label>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="task-list" data-statusId="05">
+                        <div class="task-list-item">
+                          <a>
+                            <div class="task-list-inner">
+                              <h3 class="task-title">
+                                <span class="task-main-title">list</span>
+                              </h3>
+                              <task-label task="task"></task-label>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="task-list"  data-statusId="06">
+                        <div class="task-list-item">
+                          <a>
+                            <div class="task-list-inner">
+                              <h3 class="task-title">
+                                <span class="task-main-title">list</span>
+                              </h3>
+                              <task-label task="task"></task-label>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      
+                      <footer>
+                        <a class="button">タスクの追加</a>
+                      </footer>
+                    </section>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <footer>
-              <a zf-close class="delete-button gray">キャンセル</a>
-            </footer>
-          </div>
-        </div>
+          </section>
+        </main>
       </div>
-    </div>
 
-    <task-edit-modal task-id="self.taskId" status-id="self.statusId" on-change="self.load()">
-    </task-edit-modal>
-  </main>
-</menu-frame>
+    </div>
+    <script src="./dist/js/index.js"></script>
 </body>
 </html>

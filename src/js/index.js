@@ -334,7 +334,7 @@
             d.parentNode.parentNode.parentNode.parentNode.scrollLeft;
           var sy = d.parentNode.scrollTop;
           var px = d.parentNode.parentNode.offsetLeft;
-          var py = draggingItem ? 0 : 133;
+          var py = 0;
           var x1 = d.offsetLeft + px - sx;
           var y1 = d.offsetTop + py - sy;
           var x2 = x1 + w;
